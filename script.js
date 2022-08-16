@@ -1,13 +1,13 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+//functions that validate the input
 function randomInt(min, max) {
-  if (!max){
-    max = min
-    min = 0
+  if (!max) {
+    max = min;
+    min = 0;
   }
-  var rand = Math.random()
-  return Math.floor(min*(1-rand) + rand*max)
+  var rand = Math.random();
+  return Math.floor(min*(1-rand) + rand*max);
 
 }
 
@@ -17,17 +17,17 @@ function randomItem(list) {
 
 function generatePassword() {
     
-  var userInput = window.prompt("How many characters would you like your password to contain?")
-   //prompt the user for the password criteria
+  var userInput = window.prompt("How many characters would you like your password to contain?");
+   //1.prompt the user for the password criteria
    var passwordLength = parseInt(userInput);
 
    if (isNaN(passwordLength)) {
-    window.alert("that is not a number!")
+    window.alert("that is not a number!");
     return;
    }
 // a. password length 8 < 28
    if(passwordLength < 8 || passwordLength > 128) {
-    window.alert("Password length must be between 8 and 128 characters")
+    window.alert("Password length must be between 8 and 128 characters");
     return;
    }
 // b. lowercase,uppercase,numbers, special characters
@@ -64,7 +64,7 @@ function generatePassword() {
     optionsCart.push(lowercaseList);
    }
 //3. generate paswword on criteria
-   var generatedPassword = ""
+   var generatedPassword = "";
 
    for (var i = 0; i < passwordLength; i++) {
     var randomList = randomItem(optionsCart);
@@ -83,8 +83,14 @@ function generatePassword() {
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
+//keeps "your secure password" if cancelled or number input is incorrect
+  if(!password){
+    return;
+  }
 
-  passwordText.value = password;
+  if(password) {
+    passwordText.value = password;
+  }  
 
 }
 

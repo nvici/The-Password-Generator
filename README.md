@@ -1,5 +1,5 @@
 # The-Password-Generator
-* As a blogger, I want to use JavaScript a password generator on my webpage.
+* As a blogger, I want to use JavaScript to create a unique passwords that generates on my webpage.
 
 ## Acceptance Criteria
     GIVEN I need a new, secure password
@@ -24,6 +24,9 @@ The following image demonstrates the web application's appearance and functional
 
 ![The text "The Password Generator" is on the top of the screen with a generate password button that when clicked pops out questions to generate a password.](./images/screenshot-of-password-generator.jpg)
 
+## Link
+
+https://nvici.github.io/The-Password-Generator/
 
 
 
